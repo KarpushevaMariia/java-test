@@ -1,20 +1,9 @@
 package data_provider;
 
-import com.codeborne.selenide.SelenideElement;
 import lombok.Getter;
-import org.testng.annotations.BeforeClass;
 import org.testng.annotations.DataProvider;
 
-import static com.codeborne.selenide.Selenide.$x;
-
 public class Google {
-//    String Google = "https://google.com.ua/";
-//    private static final insertValue
-//            ЗООТОВАРИ = new insertValue(),
-//            КОСМЕТИКА = new insertValue(),
-//            АПТЕКА = new insertValue();
-
-
 
     @DataProvider
     Object [][] insertValue(){
@@ -25,19 +14,16 @@ public class Google {
         };
     }
 
-//    @Getter
-//    private final String
-//            pageUrl = "https://google.com.ua/";
-//
-//    public Google(){
-//        super.pageUrl = this.pageUrl;
-//    }
+    @DataProvider
+    Object [][] pageResult(){
+        return new Object[][]{
+                {"Зоотовари", "страница 2"},
+                {"Косметика", "страница 2"},
+                {"Аптека", "страница 2"}
+        };
+    }
 
-    private final SelenideElement
-            clickInputField = $x(".//input[@role='combobox']");
-
-
-//    @BeforeClass
-//    void init() { Google = new Google(); }
-
+    @Getter
+    private final String
+            pageUrl = "https://google.com.ua/";
 }
